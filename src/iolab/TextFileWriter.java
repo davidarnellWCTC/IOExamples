@@ -20,11 +20,11 @@ public class TextFileWriter {
     
     Scanner scanner = new Scanner(System.in);
 
-    Output o;
+    private Output o;
     
-    boolean append = false;
+    private boolean append = false;
     
-    File data;
+    private File data;
     
     /**
      * Empty constructor for the TextFileWriter class
@@ -83,6 +83,8 @@ public class TextFileWriter {
         record[1] = streetAddress;
         record[2] = city + ", " + state + " " + zip;
         
+        // I just wanted to see if this would work
+        // It worked
         data = writeStringArrayToFile(data, record);
         
         return data;
@@ -101,13 +103,13 @@ public class TextFileWriter {
         
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(data, append)));
         
-        // The loop runs through the String[] and adds them to the File data object.
+        // The loop runs through the String[] and adds them to the File data object.       
         for (String s: string){
             out.println(s);
             //System.out.println(s);
-        }
+        }      
         
-        out.close();
+        out.close();        
         
         //System.out.println("Wrote file to: " + data.getAbsolutePath());
         

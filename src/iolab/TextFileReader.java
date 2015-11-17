@@ -18,7 +18,7 @@ import java.util.*;
  */
 public class TextFileReader {
 
-    File data;
+    private File data;
 
     /**
      * Empty Constructor for the TextFileReader class
