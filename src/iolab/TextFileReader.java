@@ -12,22 +12,33 @@ import java.io.IOException;
 import java.util.*;
 
 /**
- *
+ *This class reads objects from text files in the format required
+ * by the user. There are methods to read whole files or parts of files.
  * @author darnell
  */
 public class TextFileReader {
 
     File data;
 
+    /**
+     * Empty Constructor for the TextFileReader class
+     */
     public TextFileReader() {
     }
 
+    /**
+     * Constructor instantiates the class with a File object
+     * @param data - File data - represents the text file the class will read
+     */
     public TextFileReader(File data) {
         this.data = data;
     }
 
     /**
      * This method reads a file and saves each line to a String List
+     * Each line from a file is read and copied into a List<String> 
+     * @param data - File data - the text file the method turns into a List<String>
+     * @return - List<String>
      */
     public List<String> wholeFileReader(File data) {
 
@@ -61,6 +72,12 @@ public class TextFileReader {
         return fileContents;
     }
 
+    /**
+     * This method takes a File data object for the addressBook text file and
+     * returns a List<String> containing the fName, lName, and state
+     * @param data - The File data object the method turns into a List<String>
+     * @return 
+     */
     public List<String> getState(File data) {
 
         this.data = data;
@@ -112,6 +129,12 @@ public class TextFileReader {
         return fileStates;
     }
 
+    /**
+     * This method reads the File data text file from the addressBook and
+     * returns the second contact in the file
+     * @param data - File data - the text file the method turns into a List<String>
+     * @return - List<String> 
+     */
     public List<String> getSecondAddressBookContact(File data) {
 
         this.data = data;
