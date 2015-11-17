@@ -12,7 +12,7 @@ import java.util.*;
  *
  * @author darnell
  */
-public interface Output {
+public interface MonitorOutput {
     
     public void printListString(List<String> list);
     

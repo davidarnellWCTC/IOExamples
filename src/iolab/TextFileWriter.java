@@ -20,7 +20,7 @@ public class TextFileWriter {
     
     Scanner scanner = new Scanner(System.in);
 
-    private Output o;
+    private MonitorOutput o;
     
     private boolean append = false;
     
@@ -42,13 +42,13 @@ public class TextFileWriter {
     }
     
     /**
-     * This method uses a user defined Output to retrieve data to store
-     * in the addressBook file
-     * The address is saved and stored to the file
-     * @param o - Output method used to retrieve the new address info
+     * This method uses a user defined MonitorOutput to retrieve data to store
+ in the addressBook file
+ The address is saved and stored to the file
+     * @param o - MonitorOutput method used to retrieve the new address info
      * @return 
      */
-    public File writeContactToFile(Output o) throws IOException{
+    public File writeContactToFile(MonitorOutput o) throws IOException{
         this.o = o;
         
         String fName = "";

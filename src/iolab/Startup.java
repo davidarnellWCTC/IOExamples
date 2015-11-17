@@ -39,7 +39,7 @@ public class Startup {
 
         // Creating TextFileReader and ConsolePrinter Objects
         TextFileReader tfr = new TextFileReader(data);
-        Output textoutput = new ConsolePrinter();
+        MonitorOutput textoutput = new ConsolePrinter();
 
         // Creates a List<String> with the whole contents of the file
         List<String> textFileContents = tfr.wholeFileReader(data);
