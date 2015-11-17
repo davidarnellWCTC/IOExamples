@@ -153,7 +153,7 @@ public class TextFileReader {
                 if (i == 4) {
                 name = line;
             } else if (i == 6) {
-                state = line.substring(line.indexOf(" ") + 1 , line.indexOf(" ") +3);
+                state = line.substring(line.indexOf(",") + 1 , line.indexOf(" ") +3);
                 secondContact.add(name + " state: " + state);
             }
                 i++;
