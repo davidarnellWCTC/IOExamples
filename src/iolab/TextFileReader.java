@@ -170,7 +170,6 @@ public class TextFileReader {
             try {
                 in.close();
             } catch (Exception e) {
-
             }
         }
 

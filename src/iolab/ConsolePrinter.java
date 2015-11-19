@@ -16,11 +16,11 @@ public class ConsolePrinter implements IMonitorOutput {
     public ConsolePrinter() {
     }
     
-    List<String> fileContents;
+    //List<String> fileContents;
     
     @Override
     public void printListString(List<String> fileContents){
-        this.fileContents = fileContents;
+        //this.fileContents = fileContents;
         
         for(String s : fileContents){
             System.out.println(s);
