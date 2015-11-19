@@ -20,7 +20,7 @@ public class TextFileWriter {
     
     Scanner scanner = new Scanner(System.in);
 
-    private MonitorOutput o;
+    private IMonitorOutput o;
     
     private boolean append = false;
     
@@ -48,8 +48,9 @@ public class TextFileWriter {
      * @param o - MonitorOutput method used to retrieve the new address info
      * @return 
      */
-    public File writeContactToFile(MonitorOutput o) throws IOException{
+    public File writeContactToFile(IMonitorOutput o, File data) throws IOException{
         this.o = o;
+        this.data = data;
         
         String fName = "";
         String lName = "";

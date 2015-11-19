@@ -21,6 +21,7 @@ public class ObjectSerialization implements Serializable {
 	int x;
 	double dbl;
 	boolean flag;
+        // marked as transient makes it ignored, not stored in the file
 	transient double doNotSerialize = 2.15;  // transient prevents save
 	
 	// Finally, reate a class variable field to see if we can save/restore
@@ -51,9 +52,9 @@ public class ObjectSerialization implements Serializable {
 		// Modified 5-7-03 by JGL. Added buffering and close() operation.
 		try {
 			ObjectOutputStream out = new ObjectOutputStream(
-				new BufferedOutputStream( new FileOutputStream("src/test.out")) );
+				new BufferedOutputStream( new FileOutputStream("src/test.out")) );// not txt it isn't a text file
 			// Serialize two objects
-			out.writeObject(test);
+			out.writeObject(test);// serializes test and writes it
 			out.writeObject(test.hash);
 			out.close();  // don't forget to do this! I have.
 		} catch (IOException ioe) {

@@ -36,10 +36,11 @@ public class Startup {
     public static void main(String[] args) {
         File data = new File(File.separatorChar + "temp" + File.separatorChar
                 + "AddressBook.txt");
-
+        
         // Creating TextFileReader and ConsolePrinter Objects
         TextFileReader tfr = new TextFileReader(data);
-        MonitorOutput textoutput = new ConsolePrinter();
+        TextFileWriter tfw = new TextFileWriter();
+        IMonitorOutput cp = new ConsolePrinter();
 
         // Creates a List<String> with the whole contents of the file
         List<String> textFileContents = tfr.wholeFileReader(data);
@@ -49,30 +50,30 @@ public class Startup {
 
         // Lab Problem #1
         System.out.println("Contents of the file:");
-        textoutput.printListString(textFileContents);
+        cp.printListString(textFileContents);
         System.out.println();
 
         // Lab Problem #2
         System.out.println("Names and states:");
-        textoutput.printListString(textFileStates);
+        cp.printListString(textFileStates);
         System.out.println();
 
         // Lab Problem #3
         System.out.println("Second contact and their state:");
-        textoutput.printListString(tfr.getSecondAddressBookContact(data));
+        cp.printListString(tfr.getSecondAddressBookContact(data));
         System.out.println();
         
         // Lab Problem #2 part 2
         
-        TextFileWriter tfw = new TextFileWriter(data);
+        //TextFileWriter tfw = new TextFileWriter();
         
         try {
-           data = tfw.writeContactToFile(textoutput);
+           data = tfw.writeContactToFile(cp, data);
         } catch (IOException ex) {
         }
         
         // Prints the revised addressBook file
-        textoutput.printListString(tfr.wholeFileReader(data));
+        cp.printListString(tfr.wholeFileReader(data));
 
     }
 

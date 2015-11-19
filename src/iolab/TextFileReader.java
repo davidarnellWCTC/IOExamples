@@ -17,9 +17,7 @@ import java.util.*;
  * @author darnell
  */
 public class TextFileReader {
-
     private File data;
-
     /**
      * Empty Constructor for the TextFileReader class
      */
@@ -106,6 +104,8 @@ public class TextFileReader {
             }
         }
 
+        // This bundle of code runs through the fileContents List and adds
+        // the name and state to a new ArrayList containing the name and state
         String name = "";
         String state = "";
         int i = 1;
@@ -113,10 +113,10 @@ public class TextFileReader {
             if (i == 1) {
                 name = s;
             } else if (i == 3) {
-                state = s.substring(s.indexOf(" ") + 1 , s.indexOf(" ") +3);
+                state = s.substring(s.indexOf(",") + 1 , s.indexOf(",") +4);
                 fileStates.add(name + " state: " + state);
             }
-
+            // Resetting the "i" counter for a new contact
             if (i == 3) {
                 i = 1;
             } else {
@@ -146,6 +146,10 @@ public class TextFileReader {
         List<String> secondContact = new ArrayList<>();
 
         BufferedReader in = null;
+        // This retrieves the information from the 4th to 6th lines and
+        // adds them to the secondContact ArrayList
+        // If there is no second contact or it is not complete, the line is 
+        // null and the contact is not added to the ArrayList
         try {
             in = new BufferedReader(new FileReader(data));
             String line = in.readLine();

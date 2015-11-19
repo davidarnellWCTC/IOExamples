@@ -7,7 +7,7 @@ import java.util.*;
  *
  * @author darnell
  */
-public class ConsolePrinter implements MonitorOutput {
+public class ConsolePrinter implements IMonitorOutput {
 
 //    public ConsolePrinter(List<String> fileContents) {
 //        this.fileContents = fileContents;
